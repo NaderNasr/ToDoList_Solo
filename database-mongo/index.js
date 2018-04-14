@@ -12,20 +12,20 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+  todo: String
 });
 
 var Item = mongoose.model('Item', itemSchema);
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
+var save = function(data,callback){
+  var item = new Item(data)
+  item.save(function(err,dataRes){
+    if(err){
+      callback(err)
     }
-  });
-};
+    callback(dataRes)
+  })
+}
 
-module.exports.selectAll = selectAll;
+module.exports.Item = Item;
+module.exports.save = save;
