@@ -2,6 +2,7 @@ import React from 'react';
 import ListItem from './ListItem.jsx';
 
 
+
 const List = (props) => (
   <div>
     <h4> Your Current List </h4>
@@ -9,7 +10,7 @@ const List = (props) => (
     { 
         props.items.map(item => 
     	<div key = {item._id}>
-    		<h2> + {item.todo}</h2>
+    		<h2 input type="checkbox" value="">{item.todo}</h2>
     		<ListItem item={item}/>
     	</div>
     	)
