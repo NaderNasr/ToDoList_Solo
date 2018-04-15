@@ -1,13 +1,15 @@
 import React from 'react';
 import ListItem from './ListItem.jsx';
 
+
 const List = (props) => (
   <div>
-    <h4> List Component </h4>
+    <h4> Your Current List </h4>
     There are { props.items.length } items.
-    { props.items.map(item => 
-    	<div key={item._id}>
-    		<h2>{item.todo}</h2>
+    { 
+        props.items.map(item => 
+    	<div key = {item._id}>
+    		<h2> + {item.todo}</h2>
     		<ListItem item={item}/>
     	</div>
     	)

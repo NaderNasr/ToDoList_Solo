@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
 
+
+
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -12,15 +16,18 @@ class App extends React.Component {
     }
     this.getTodo = this.getTodo.bind(this);
     this.addTodo = this.addTodo.bind(this);
-    this.deleteTodo = this.deleteTodo.bind(this);
+    /*this.deleteTodo = this.deleteTodo.bind(this);*/
 
 
 
-  }
-
-  deleteTodo(){
 
   }
+
+
+
+/*  deleteTodo(){
+
+  }*/
 
   addTodo(t) {
     var that = this
@@ -53,12 +60,19 @@ class App extends React.Component {
 
 
 
+
+
   render () {
+
+
+
     return (<div>
-      <h1>TodoList</h1>
-      <input name="nader" onChange={this.getTodo}/>
-      <button onClick={()=> this.addTodo(this.state.todo)}>Add to ToDo List</button>
-      <List items={this.state.items}/>
+      <h1 style ={{color:'black', fontSize: 100}}> Gorcery List </h1>
+      <input style={{width: 500}} name = "test" onChange = { this.getTodo } />
+      <button onClick = {() => this.addTodo( this.state.todo )}> Add to ToDo List</button>
+{/*   <button onClick = {() => this.deleteTodo( this.state.todo )}> Delete an item </button>*/}
+      <List items = { this.state.items }/>
+
     </div>)
   }
 }
